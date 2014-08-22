@@ -12,7 +12,7 @@
 # So I guess cbind Y_test to the first column of X_test
 # and cbind Y_train to the first column of X_train
 # Then rbind 561 records of features.txt to the first row of both, which both have 561 columns
-
+if(!require(data.table)){install.packages("data.table")}
 setwd("/Users/david/coursera_data_science_track/getting_and_cleaning_data_course/project//UCI HAR Dataset")
 
 # Get raw features data; every other line will be a record number integer we discard later
@@ -35,21 +35,32 @@ indices <- which(grepl("std", col_names) | grepl("mean", col_names))
 
 # Generate sequence of 561 16's, because we have a fixed format file with
 # 561 columns of 16 character width
-sq = c(seq(from=16,to=16,length.out=561))
+# sq = c(seq(from=16,to=16,length.out=561))
 
 # Read the file
+labels = read.fwf("activity_labels.txt", widths=c(2,50))
+print(labels[1,1])
 X_test = read.table("test/X_test.txt", header=F, colClasses="numeric")
-Y_test = read.table("test/Y_test.txt", header=F, colClasses="numeric")
-CombinedXYtest <- cbind(Y_test, X_test)
+Y_test = read.table("test/y_test.txt", header=F, colClasses="numeric")
+
+CombinedXYtest <- cbind(Y_test_labels, X_test)
+
+X_train = read.table("train/X_train.txt", header=F, colClasses="numeric")
+Y_train = read.table("train/y_train.txt", header=F, colClasses="numeric")
+CombinedXYtrain <- cbind(Y_train, X_train)
+combined <- rbind(CombinedXYtest, CombinedXYtrain)
+final <- combined[,indices]
+print(final[1:5,1:5])
+
 
 # there are empty strings in the data, find them with this:
-cleaned <- X_test[which(X_test != "")]
+# cleaned <- X_test[which(X_test != "")]
 
 # Try this for holding the main data set, where T is 'byrow'
 # Get rid of explicit nrow and ncol, do that programmatically instead
-m <- matrix (cleaned, 2947, 561, T)
+# m <- matrix (cleaned, 2947, 561, T)
 
-# They are strings, watch out for this if doing any summarization!!
+
 
 
 
