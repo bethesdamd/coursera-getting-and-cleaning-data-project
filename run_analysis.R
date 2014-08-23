@@ -71,15 +71,20 @@ final$ActivityCodes <- NULL
 # Averages dataset:
 # final[(final$Subject == 1 & final$Activity == "STANDING"),1]
 
+cols <- col_names[indices]
+c_names <- c("Subject", "Activity", cols)
+out <- data.frame()
 for(subject in unique(final$Subject))  {
       for(activity in unique(final$Activity)) {
-            for(colIndex in 1:length(col_names[indices])) {
+            for(colIndex in 1:length(cols)) {
                   values <- final[(final$Subject == subject & final$Activity == activity), colIndex]
-                  print(subject)
-                  print(activity)
-                  print(colIndex)
-                  print(ave(values))
+                  tmpDF <- data.frame()
+                  tmpDF[1,"Subject"] <- subject
+                  tmpDF[1,"Activity"] <- activity
+                  tmpDF[1,paste(sep="",cols[colIndex])] <- mean(values)
+                  print(tmpDF)
             }
+            out <- rbind(out, tmpDF)
       }
 }
 
