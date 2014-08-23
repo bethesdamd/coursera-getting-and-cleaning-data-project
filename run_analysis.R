@@ -67,3 +67,19 @@ for(i in 1:nrow(final)) {
 }
 final$Activity <- activityText
 final$ActivityCodes <- NULL
+
+# Averages dataset:
+# final[(final$Subject == 1 & final$Activity == "STANDING"),1]
+
+for(subject in unique(final$Subject))  {
+      for(activity in unique(final$Activity)) {
+            for(colIndex in 1:length(col_names[indices])) {
+                  values <- final[(final$Subject == subject & final$Activity == activity), colIndex]
+                  print(subject)
+                  print(activity)
+                  print(colIndex)
+                  print(ave(values))
+            }
+      }
+}
+
