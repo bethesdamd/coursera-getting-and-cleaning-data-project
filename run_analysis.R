@@ -40,14 +40,18 @@ indices <- which(grepl("std", col_names) | grepl("mean", col_names))
 # Read the file
 labels = read.fwf("activity_labels.txt", widths=c(2,50))
 X_test = read.table("test/X_test.txt", colClasses="numeric")
-Y_test = read.table("test/y_test.txt", colClasses="numeric")
+y_test = read.table("test/y_test.txt", colClasses="numeric")
 
 X_train = read.table("train/X_train.txt", header=F, colClasses="numeric")
-Y_train = read.table("train/y_train.txt", header=F, colClasses="numeric")
+y_train = read.table("train/y_train.txt", header=F, colClasses="numeric")
+subject_train = read.table("train/subject_train.txt", colClasses="numeric")
+subject_test = read.table("test/subject_test.txt", colClasses="numeric")
 
-combined <- rbind(X_train, X_test)
-final <- combined[,indices]
+features <- rbind(X_train, X_test)
+final <- features[,indices]
 names(final) <- col_names[indices]
+final$Subject <- rbind(subject_train, subject_test)
+final$Activity <- rbind(y_train, y_test)
 
 # final <- final[1:100,1:5]
 
