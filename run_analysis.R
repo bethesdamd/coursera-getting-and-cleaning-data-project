@@ -39,28 +39,29 @@ indices <- which(grepl("std", col_names) | grepl("mean", col_names))
 
 # Read the file
 labels = read.fwf("activity_labels.txt", widths=c(2,50))
-print(labels[1,1])
-X_test = read.table("test/X_test.txt", header=F, colClasses="numeric")
-Y_test = read.table("test/y_test.txt", header=F, colClasses="numeric")
+X_test = read.table("test/X_test.txt", colClasses="numeric")
+Y_test = read.table("test/y_test.txt", colClasses="numeric")
 
-CombinedXYtest <- cbind(Y_test_labels, X_test)
+# CombinedXYtest <- cbind(Y_test_labels, X_test)
 
 X_train = read.table("train/X_train.txt", header=F, colClasses="numeric")
 Y_train = read.table("train/y_train.txt", header=F, colClasses="numeric")
 CombinedXYtrain <- cbind(Y_train, X_train)
 combined <- rbind(CombinedXYtest, CombinedXYtrain)
 final <- combined[,indices]
-print(final[1:5,1:5])
+final <- final[1:100,1:5]
 
+print(final$V1[1:200])
+# for(i in 1:nrow(final)) final$V1 <- labels$V2[final$V1[i]]
 
-# there are empty strings in the data, find them with this:
+newvals <- list()
+for(i in 1:nrow(final)) { 
+      p<-final$V1[i]
+      newval <- as.character(labels$V2[p])
+      print(newval)
+      newvals <- c(newvals, newval)
+}
+final$ACTIVITY <-newvals
+final$V1 = NULL
+
 # cleaned <- X_test[which(X_test != "")]
-
-# Try this for holding the main data set, where T is 'byrow'
-# Get rid of explicit nrow and ncol, do that programmatically instead
-# m <- matrix (cleaned, 2947, 561, T)
-
-
-
-
-
