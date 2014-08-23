@@ -51,16 +51,17 @@ features <- rbind(X_train, X_test)
 final <- features[,indices]
 names(final) <- col_names[indices]
 final$Subject <- rbind(subject_train, subject_test)
-final$Activity <- rbind(y_train, y_test)
+tempdf <- rbind(y_train, y_test)
+names(tempdf) <- c("ActivityCodes")
+final <- cbind(final, tempdf)
 
 # final <- final[1:100,1:5]
 
-# newvals <- list()
-# for(i in 1:nrow(final)) { 
-#       p<-final$V1[i]
-#       newval <- as.character(labels$V2[p])
-#       newvals <- c(newvals, newval)
-# }
-# final$ACTIVITY <-newvals
-# final$V1 = NULL
-
+activityText <- list()
+for(i in 1:nrow(final)) { 
+      p <- final$ActivityCodes[i]
+      newval <- as.character(labels$V2[p])
+      activityText <- c(activityText, newval)
+}
+final$Activity <- activityText
+final$ActivityCodes <- NULL
