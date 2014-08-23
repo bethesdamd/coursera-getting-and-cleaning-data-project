@@ -42,26 +42,21 @@ labels = read.fwf("activity_labels.txt", widths=c(2,50))
 X_test = read.table("test/X_test.txt", colClasses="numeric")
 Y_test = read.table("test/y_test.txt", colClasses="numeric")
 
-# CombinedXYtest <- cbind(Y_test_labels, X_test)
-
 X_train = read.table("train/X_train.txt", header=F, colClasses="numeric")
 Y_train = read.table("train/y_train.txt", header=F, colClasses="numeric")
-CombinedXYtrain <- cbind(Y_train, X_train)
-combined <- rbind(CombinedXYtest, CombinedXYtrain)
+
+combined <- rbind(X_train, X_test)
 final <- combined[,indices]
-final <- final[1:100,1:5]
+names(final) <- col_names[indices]
 
-print(final$V1[1:200])
-# for(i in 1:nrow(final)) final$V1 <- labels$V2[final$V1[i]]
+# final <- final[1:100,1:5]
 
-newvals <- list()
-for(i in 1:nrow(final)) { 
-      p<-final$V1[i]
-      newval <- as.character(labels$V2[p])
-      print(newval)
-      newvals <- c(newvals, newval)
-}
-final$ACTIVITY <-newvals
-final$V1 = NULL
+# newvals <- list()
+# for(i in 1:nrow(final)) { 
+#       p<-final$V1[i]
+#       newval <- as.character(labels$V2[p])
+#       newvals <- c(newvals, newval)
+# }
+# final$ACTIVITY <-newvals
+# final$V1 = NULL
 
-# cleaned <- X_test[which(X_test != "")]
