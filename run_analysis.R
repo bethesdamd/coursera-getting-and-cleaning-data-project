@@ -50,18 +50,20 @@ subject_test = read.table("test/subject_test.txt", colClasses="numeric")
 features <- rbind(X_train, X_test)
 final <- features[,indices]
 names(final) <- col_names[indices]
-final$Subject <- rbind(subject_train, subject_test)
-tempdf <- rbind(y_train, y_test)
-names(tempdf) <- c("ActivityCodes")
-final <- cbind(final, tempdf)
+tempsub <- rbind(subject_train, subject_test)
+names(tempsub) <- c("Subject")
+final <- cbind(final, tempsub)
+tempact <- rbind(y_train, y_test)
+names(tempact) <- c("ActivityCodes")
+final <- cbind(final, tempact)
 
 # final <- final[1:100,1:5]
 
-activityText <- list()
-for(i in 1:nrow(final)) { 
-      p <- final$ActivityCodes[i]
-      newval <- as.character(labels$V2[p])
-      activityText <- c(activityText, newval)
-}
-final$Activity <- activityText
-final$ActivityCodes <- NULL
+# activityText <- list()
+# for(i in 1:nrow(final)) { 
+#       p <- final$ActivityCodes[i]
+#       newval <- as.character(labels$V2[p])
+#       activityText <- c(activityText, newval)
+# }
+# final$Activity <- activityText
+# final$ActivityCodes <- NULL
