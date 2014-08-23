@@ -59,11 +59,11 @@ final <- cbind(final, tempact)
 
 # final <- final[1:100,1:5]
 
-# activityText <- list()
-# for(i in 1:nrow(final)) { 
-#       p <- final$ActivityCodes[i]
-#       newval <- as.character(labels$V2[p])
-#       activityText <- c(activityText, newval)
-# }
-# final$Activity <- activityText
-# final$ActivityCodes <- NULL
+activityText <- list()
+for(i in 1:nrow(final)) { 
+      p <- final$ActivityCodes[i]
+      newval <- as.character(labels$V2[p])
+      activityText <- c(activityText, newval)
+}
+final$Activity <- activityText
+final$ActivityCodes <- NULL
