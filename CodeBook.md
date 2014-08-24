@@ -251,24 +251,43 @@ The complete list of variables of each feature vector follows:
 452 fBodyGyro-meanFreq()-X
 
 453 fBodyGyro-meanFreq()-Y
+
 454 fBodyGyro-meanFreq()-Z
+
 503 fBodyAccMag-mean()
+
 504 fBodyAccMag-std()
+
 516 fBodyBodyAccJerkMag-mean()
+
 517 fBodyBodyAccJerkMag-std()
+
 526 fBodyBodyAccJerkMag-meanFreq()
+
 529 fBodyBodyGyroMag-mean()
+
 530 fBodyBodyGyroMag-std()
+
 539 fBodyBodyGyroMag-meanFreq()
+
 542 fBodyBodyGyroJerkMag-mean()
+
 543 fBodyBodyGyroJerkMag-std()
+
 552 fBodyBodyGyroJerkMag-meanFreq()
+
 555 angle(tBodyAccMean,gravity)
+
 556 angle(tBodyAccJerkMean),gravityMean)
+
 557 angle(tBodyGyroMean,gravityMean)
+
 558 angle(tBodyGyroJerkMean,gravityMean)
+
 559 angle(X,gravityMean)
+
 560 angle(Y,gravityMean)
+
 561 angle(Z,gravityMean)
 
 
