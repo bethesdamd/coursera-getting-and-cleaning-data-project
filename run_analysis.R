@@ -83,7 +83,6 @@ for(subject in unique(final$Subject))  {
                   tmpDF[1,"Activity"] <- activity
                   tmpDF[1,paste(sep="",cols[colIndex])] <- mean(values)
             }
-            print(tmpDF)
             out <- rbind(out, tmpDF)
       }
 }
