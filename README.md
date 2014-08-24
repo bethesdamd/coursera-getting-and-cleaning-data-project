@@ -2,7 +2,7 @@
 
 ### Explanation of the script
 
-The script contains comments that explain the various steps in manipulating the dat, from an R code perspective.
+The _run_analysis.R_ script contains comments that explain the various steps in manipulating the dat, from an R code perspective.
 
 Here are the high level steps:
 
