@@ -41,6 +41,7 @@ tempact <- rbind(y_train, y_test)
 names(tempact) <- c("ActivityCodes")
 final <- cbind(final, tempact)
 
+# Replace the numerical activity codes with their actual textual description
 activityText <- list()
 for(i in 1:nrow(final)) { 
       p <- final$ActivityCodes[i]
@@ -48,11 +49,10 @@ for(i in 1:nrow(final)) {
       activityText <- c(activityText, newval)
 }
 final$Activity <- activityText
-final$ActivityCodes <- NULL
+final$ActivityCodes <- NULL  # Remove this column which is now no longer needed
 
-# Averages dataset:
-# final[(final$Subject == 1 & final$Activity == "STANDING"),1]
-
+# This is step 2 in the assignment, where we are calculating averages and assembling a new 
+# output dataframe called 'out', which is then written to disk
 cols <- col_names[indices]
 c_names <- c("Subject", "Activity", cols)
 out <- data.frame()
@@ -70,7 +70,4 @@ for(subject in unique(final$Subject))  {
 }
 
 write.table(out, file="averages.txt", row.name=F)
-
-
-
 
