@@ -53,6 +53,7 @@ final$ActivityCodes <- NULL  # Remove this column which is now no longer needed
 
 # This is step 2 in the assignment, where we are calculating averages and assembling a new 
 # output dataframe called 'out', which is then written to disk
+# For every subject, then ever activity, then every column, compute the averages.
 cols <- col_names[indices]
 c_names <- c("Subject", "Activity", cols)
 out <- data.frame()

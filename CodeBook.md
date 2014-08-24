@@ -6,6 +6,8 @@
 
 _(It was assumed for the sake of this project that labels such as 'tBodyAcc-mean()-X' are sufficiently self-explanatory and did not need to be converted to a more explicit form.)_
 
+The _averages.txt_ file contains the averages of every activity for every subject and every feature __if that feature is a 'mean' or 'std' feature.  If the feature lable contained 'mean' or 'std' then the feature was included in this averages.txt output file.
+
 Feature Selection 
 =================
 
