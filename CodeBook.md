@@ -117,7 +117,7 @@ tBodyGyroMean
 
 tBodyGyroJerkMean
 
-The complete list of variables of each feature vector follows:
+__The complete list of variables of each feature vector follows:__
 
 tBodyAcc-mean()-X
 
