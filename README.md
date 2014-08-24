@@ -14,7 +14,7 @@ Create a second, independent tidy data set with the average of each variable for
 
 Write the second data set to a file called averages.txt
 
-The merging of the various files and data was based upon this graphic provided by the Community TA and explains in detail figuratively what would be difficult to explain here in text: https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png  ![image](https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/    Slide2.png)
+The merging of the various files and data was based upon this graphic provided by the Community TA and explains in detail figuratively what would be difficult to explain here in text: https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png  ![image](https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png)
 
 The resulting text file is called 'averages.txt.  This contains columns for Subject, Activity and feature.  This is a space-delimited file. The first line contains the columns headings.
 
