@@ -120,39 +120,39 @@ tBodyGyroJerkMean
 
 The complete list of variables of each feature vector follows:
 
-1 tBodyAcc-mean()-X
+tBodyAcc-mean()-X
 
-2 tBodyAcc-mean()-Y
+tBodyAcc-mean()-Y
 
-3 tBodyAcc-mean()-Z
+tBodyAcc-mean()-Z
 
-4 tBodyAcc-std()-X
+tBodyAcc-std()-X
 
-5 tBodyAcc-std()-Y
+tBodyAcc-std()-Y
 
-6 tBodyAcc-std()-Z
+tBodyAcc-std()-Z
 
-41 tGravityAcc-mean()-X
+tGravityAcc-mean()-X
 
-42 tGravityAcc-mean()-Y
+tGravityAcc-mean()-Y
 
-43 tGravityAcc-mean()-Z
+tGravityAcc-mean()-Z
 
-44 tGravityAcc-std()-X
+tGravityAcc-std()-X
 
-45 tGravityAcc-std()-Y
+tGravityAcc-std()-Y
 
-46 tGravityAcc-std()-Z
+tGravityAcc-std()-Z
 
-81 tBodyAccJerk-mean()-X
+tBodyAccJerk-mean()-X
 
-82 tBodyAccJerk-mean()-Y
+tBodyAccJerk-mean()-Y
 
-83 tBodyAccJerk-mean()-Z
+tBodyAccJerk-mean()-Z
 
-84 tBodyAccJerk-std()-X
+tBodyAccJerk-std()-X
 
-85 tBodyAccJerk-std()-Y
+tBodyAccJerk-std()-Y
 
 86 tBodyAccJerk-std()-Z
 
