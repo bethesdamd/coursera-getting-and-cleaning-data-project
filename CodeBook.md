@@ -246,49 +246,49 @@ fBodyGyro-std()-X
 
 fBodyGyro-std()-Y
 
-429 fBodyGyro-std()-Z
+fBodyGyro-std()-Z
 
-452 fBodyGyro-meanFreq()-X
+fBodyGyro-meanFreq()-X
 
-453 fBodyGyro-meanFreq()-Y
+fBodyGyro-meanFreq()-Y
 
-454 fBodyGyro-meanFreq()-Z
+fBodyGyro-meanFreq()-Z
 
-503 fBodyAccMag-mean()
+fBodyAccMag-mean()
 
-504 fBodyAccMag-std()
+fBodyAccMag-std()
 
-516 fBodyBodyAccJerkMag-mean()
+fBodyBodyAccJerkMag-mean()
 
-517 fBodyBodyAccJerkMag-std()
+fBodyBodyAccJerkMag-std()
 
-526 fBodyBodyAccJerkMag-meanFreq()
+fBodyBodyAccJerkMag-meanFreq()
 
-529 fBodyBodyGyroMag-mean()
+fBodyBodyGyroMag-mean()
 
-530 fBodyBodyGyroMag-std()
+fBodyBodyGyroMag-std()
 
-539 fBodyBodyGyroMag-meanFreq()
+fBodyBodyGyroMag-meanFreq()
 
-542 fBodyBodyGyroJerkMag-mean()
+fBodyBodyGyroJerkMag-mean()
 
-543 fBodyBodyGyroJerkMag-std()
+fBodyBodyGyroJerkMag-std()
 
-552 fBodyBodyGyroJerkMag-meanFreq()
+fBodyBodyGyroJerkMag-meanFreq()
 
-555 angle(tBodyAccMean,gravity)
+angle(tBodyAccMean,gravity)
 
-556 angle(tBodyAccJerkMean),gravityMean)
+angle(tBodyAccJerkMean),gravityMean)
 
-557 angle(tBodyGyroMean,gravityMean)
+angle(tBodyGyroMean,gravityMean)
 
-558 angle(tBodyGyroJerkMean,gravityMean)
+angle(tBodyGyroJerkMean,gravityMean)
 
-559 angle(X,gravityMean)
+angle(X,gravityMean)
 
-560 angle(Y,gravityMean)
+angle(Y,gravityMean)
 
-561 angle(Z,gravityMean)
+angle(Z,gravityMean)
 
 
 
